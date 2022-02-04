@@ -1,0 +1,23 @@
+@import "reset.css";
+
+.wrapper{
+  width:500px; height:50px; margin:20px auto;
+  border:2px solid rgb(0, 10, 74);
+  text-align:center; line-height:50px;
+}
+
+.img{width:400px; margin:30px auto;}
+
+.put{text-align:center;}
+.put .js_input{
+  display:block;
+  width:300px; height:30px; margin:20px auto;
+  text-align:center;
+  border:1px solid rgb(176, 183, 255);
+  border-radius:20px;
+}
+.put .btn{
+  width:100px; height:20px; margin:auto;
+  text-align:center; font-size:10px; line-height:10px;
+  background-color:transparent;
+}
