@@ -10,7 +10,21 @@
 //   text[2].innerHTML="코딩연습중!"
 // }
 
-let n = 0;
-function plus(){
-  console.log(n++);
-}
+// let n = 0;
+// function plus(){
+//   console.log(n++);
+// }
+
+var num = 5;
+var str = "얍";
+var boo = true;
+var n = null;
+var un = undefined;
+var ob = {first:"Hello", second:10};
+
+console.log(num+" = "+typeof num);
+console.log(str+" = "+typeof str);
+console.log(boo+" = "+typeof boo);
+console.log(n+" = "+typeof n);
+console.log(un+" = "+typeof un);
+console.log(ob+" = "+typeof ob);
