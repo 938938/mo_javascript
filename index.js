@@ -15,16 +15,25 @@
 //   console.log(n++);
 // }
 
-var num = 5;
-var str = "얍";
-var boo = true;
-var n = null;
-var un = undefined;
-var ob = {first:"Hello", second:10};
+// var num = 5;
+// var str = "얍";
+// var boo = true;
+// var n = null;
+// var un = undefined;
+// var ob = {first:"Hello", second:10};
 
-console.log(num+" = "+typeof num);
-console.log(str+" = "+typeof str);
-console.log(boo+" = "+typeof boo);
-console.log(n+" = "+typeof n);
-console.log(un+" = "+typeof un);
-console.log(ob+" = "+typeof ob);
+// console.log(num+" = "+typeof num);
+// console.log(str+" = "+typeof str);
+// console.log(boo+" = "+typeof boo);
+// console.log(n+" = "+typeof n);
+// console.log(un+" = "+typeof un);
+// console.log(ob+" = "+typeof ob);
+
+const x = 5;
+const y = 3;
+console.log("x =",x);
+console.log("y = ",y);
+console.log("x+y = ", x+y);
+console.log("x-y = ", x-y);
+console.log("x*y = ", x*y);
+console.log("x/y = ", x/y);
