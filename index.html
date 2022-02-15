@@ -19,10 +19,18 @@
     <p>=<span id="result"></span></p> -->
   </section>
   <footer></footer>
-    <h1>00 : 00 : 00</h1>
+    <!-- <h1 class="stopwatch">00 : 00 : 00</h1>
     <button class="start" onclick="start()">start</button>
     <button class="stop" onclick="stop()">stop</button>	
-    <button class="reset" onclick="reset()">reset</button>
+    <button class="reset" onclick="reset()">reset</button> -->
+  <h1 id="stopwatch" >
+    00:00:00
+  </h1>
+  <div>
+    <button onclick="startClock()">start</button>
+    <button onclick="stopClock()">stop</button>
+    <button onclick="resetClock()">reset</button>
+  </div>
   <script src="./index.js"></script>
 </body>
 </html>
