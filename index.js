@@ -13,7 +13,6 @@ function btn(){
 function reset(){
     span[0].innerHTML = "";
     i = 0;
-    return;
 }
 
 function colorChange() {
