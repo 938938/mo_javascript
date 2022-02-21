@@ -18,6 +18,8 @@ function output(){
         say.style.fontSize="15px";
     } else if (value==""){
         alert("메세지를 입력해주세요!");
+    } else if (value=="처음"){
+        say.innerText ="야옹";
     } else {
         say.innerText="따라하기 : "+value;
     };
