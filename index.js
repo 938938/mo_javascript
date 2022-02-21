@@ -54,13 +54,42 @@
 //     genre[0].innerHTML = movieThree.genre;
 // }
 
-setTimeout(function onClick(){
-    const name = document.getElementsByTagName("h2");
-    name[0].innerText = "김OO";
-    const p = document.getElementsByTagName("p");
-    p[0].innerText = "010-XXXX-XXXX";
-    const btn = document.getElementById("btn");
-    btn.innerText = "연결중…";
-},2000);
+// function calling(){
+//     const name = document.getElementsByTagName("h2");
+//     name[0].innerText = "김OO";
+//     const p = document.getElementsByTagName("p");
+//     p[0].innerText = "010-XXXX-XXXX";
+//     const btn = document.getElementById("btn");
+//     btn.innerText = "연결중…";
+// }
 
-document.getElementById("btn").addEventListener("click",onClick);
+// function onClick(){
+//     setTimeout(calling,2000);
+// }
+
+// document.getElementById("btn").addEventListener("click",onClick);
+
+function output(){
+    let value = document.getElementById("input").value;
+    const say = document.getElementById("catsay");
+    const bod = document.getElementById("body");
+    if(value=="안녕?"){
+        say.innerText = "안녕!";
+    } else if(value=="배경색"){
+        bod.style.backgroundColor = "azure";
+    } else if(value=="원래대로"){
+        bod.style.backgroundColor = "white";
+    } else if (value=="크게"){
+        say.style.fontSize="20px";
+    } else if (value=="작게"){
+        say.style.fontSize="10px";
+    } else if (value=="기본"){
+        say.style.fontSize="15px";
+    } else if (value==""){
+        alert("메세지를 입력해주세요!");
+    } else {
+        say.innerText="따라하기 : "+value;
+    }
+}
+
+document.getElementById("btn").addEventListener("click",output);

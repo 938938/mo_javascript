@@ -1,33 +1,51 @@
-/* @import "reset.css"; */
+@import "reset.css";
 
-@charset "UTF-8";
-
-/* .wrapper{
+.wrapper{
   width:500px; height:50px; margin:20px auto;
   border:2px solid rgb(0, 10, 74);
   text-align:center; line-height:50px;
 }
-
+.say{
+  position: relative;
+  left:50%; margin-left:-200px;
+  width:400px; height:80px;
+  padding:5px 10px;
+  background: rgba(230, 230, 230, 0.3);
+  -webkit-border-radius: 29px;
+  -moz-border-radius: 29px;
+  border-radius: 29px;
+  line-height:80px; text-align:center;
+}
+.say:after{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 25px 11px 0;
+  border-color: rgb(230, 230, 230, 0.3) transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -25px;
+  left: 191px;
+}
+#catsay{
+  font-size:15px;
+}
 .img{width:400px; margin:30px auto;}
-
 .put{text-align:center;}
-.put .js_input{
+#input{
   display:block;
   width:300px; height:30px; margin:20px auto;
   text-align:center;
   border:1px solid rgb(176, 183, 255);
   border-radius:20px;
 }
-.put .btn{
-  width:100px; height:20px; margin:auto;
+.button{
+  width:100px;
+  margin:auto;
+}
+#btn{
+  width:100px; height:20px;
   text-align:center; font-size:10px; line-height:10px;
   background-color:transparent;
-} */
-
-section{
-  margin:10px;
-}
-button{
-  margin:5px; background-color:white;
-  border-radius:10px;
 }
