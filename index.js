@@ -70,7 +70,9 @@
 // document.getElementById("btn").addEventListener("click",onClick);
 
 function output(){
+    event.preventDefault();
     let value = document.getElementById("input").value;
+    const input = document.getElementById("input");
     const say = document.getElementById("catsay");
     const bod = document.getElementById("body");
     if(value=="안녕?"){
@@ -89,7 +91,9 @@ function output(){
         alert("메세지를 입력해주세요!");
     } else {
         say.innerText="따라하기 : "+value;
-    }
+    };
+    input.value=null;
 }
 
 document.getElementById("btn").addEventListener("click",output);
+document.getElementById("form").addEventListener("submit",output);
