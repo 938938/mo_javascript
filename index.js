@@ -22,6 +22,7 @@ function output(){
         say.innerText ="야옹";
     } else {
         say.innerText="따라하기 : "+value;
+        console.log(value);
     };
     input.value=null;
 }
