@@ -2,9 +2,11 @@ function output(){
     event.preventDefault();
     let value = document.getElementById("input").value;
     const input = document.getElementById("input");
+    const btn = document.getElementById("btn");
     const say = document.getElementById("catsay");
     const bod = document.getElementById("body");
     const cat = document.getElementById("cat");
+    const ti = document.getElementById("ti");
     if(value=="안녕?"){
         say.innerText = "안녕!";
     } else if(value=="배경색"){
@@ -25,6 +27,8 @@ function output(){
         bod.style.backgroundColor = "black";
         say.style.color="white";
         cat.style.filter="grayscale(100%)";
+        btn.style.backgroundColor="white";
+        ti.style.backgroundColor="white";
     } else if (value=="밝게"){
         bod.style.backgroundColor = "white";
         say.style.color="black";
