@@ -4,6 +4,7 @@ function output(){
     const input = document.getElementById("input");
     const say = document.getElementById("catsay");
     const bod = document.getElementById("body");
+    const cat = document.getElementById("cat");
     if(value=="안녕?"){
         say.innerText = "안녕!";
     } else if(value=="배경색"){
@@ -23,10 +24,12 @@ function output(){
     } else if (value=="어둡게"){
         bod.style.backgroundColor = "black";
         say.style.color="white";
+        cat.style.filter="grayscale(100%)";
     } else if (value=="밝게"){
         bod.style.backgroundColor = "white";
         say.style.color="black";
-    }else {
+        cat.style.filter="";
+    } else {
         say.innerText="따라하기 : "+value;
         console.log(value);
     };
