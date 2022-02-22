@@ -20,7 +20,13 @@ function output(){
         alert("메세지를 입력해주세요!");
     } else if (value=="처음"){
         say.innerText ="야옹";
-    } else {
+    } else if (value=="어둡게"){
+        bod.style.backgroundColor = "black";
+        say.style.color="white";
+    } else if (value=="밝게"){
+        bod.style.backgroundColor = "white";
+        say.style.color="black";
+    }else {
         say.innerText="따라하기 : "+value;
         console.log(value);
     };
