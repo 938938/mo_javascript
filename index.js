@@ -1,3 +1,5 @@
+let n = 0;
+
 function output(){
     event.preventDefault();
     let value = document.getElementById("input").value;
@@ -33,9 +35,17 @@ function output(){
         bod.style.backgroundColor = "white";
         say.style.color="black";
         cat.style.filter="";
-    } else {
-        say.innerText="따라하기 : "+value;
-        console.log(value);
+    };
+    
+    if(n==0&&value=="따라하기"){
+        say.innerText="응! 이제 따라할게!"
+        n=1;
+    } else if (n==1) {
+        say.innerText=" “ "+value+" ! ” ";
+    };
+    if (n==1&&value=="그만하자"){
+        say.innerText="알았어!";
+        n=0;
     };
     input.value=null;
 }
