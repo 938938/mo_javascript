@@ -35,8 +35,11 @@ function output(){
         bod.style.backgroundColor = "white";
         say.style.color="black";
         cat.style.filter="";
+    } else if (value=="밥"){
+        say.innerText="좋아!";
+    } else {
+        console.log(value);
     };
-    
     if(n==0&&value=="따라하기"){
         say.innerText="응! 이제 따라할게!"
         n=1;
