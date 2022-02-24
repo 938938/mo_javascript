@@ -63,7 +63,13 @@ function output(){
         say.style.color="black";
         cat.style.filter="";
     } else if (value=="밥"){
-        say.innerText="좋아!";
+        typewriter
+        .deleteAll()
+        .typeString("좋아!")
+        .pauseFor(500)
+        .deleteAll()
+        .start();
+        // say.innerText="좋아!";
     } else {
         console.log(value);
     };
