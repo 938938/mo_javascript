@@ -30,53 +30,28 @@ typewriter
     .deleteAll()
     .start();
 
-let question ="";
-let answer="";
+let question =""; //질문 임시 저장 함수
+let answer=""; // 대답 임시 저장 함수
 
 let b = 0; // 다크모드 판단
-
 let key=0; // 말가르쳐주기 판단
 
 function text_check(){
     event.preventDefault();
-    const value=document.getElementById("input").value;
+    const value=document.getElementById("input").value; //사용자 입력값
     const reply = document.getElementById("type");
 
     const bod = document.getElementById("body");
     const cat = document.getElementById("cat");
     
+
+    //length = 배열 길이 확인 함수, json 데이터를 모두 확인.
     for(let i = 0; i<json.length; i++){
         if(value==json[i].question){
             reply.innerText=json[i].answer;
             input.value=null;
             return;
         }
-    }
-
-    if(key==1){
-        if(value=="응"){
-            reply.innerText="대답을 알려줘!";
-            input.value=null;
-            key=2;
-        } else {
-            reply.innerText="야옹?";
-            input.value=null;
-            key=0;
-        }
-        return;
-    }
-
-    function push_json(){
-        json.push({question: `${question}`, answer: `${answer}`});
-        key = 0;
-    }
-
-    if(key==2){
-        answer=value;
-        push_json();
-        reply.innerText="기억했어!";
-        input.value=null;
-        return;
     }
 
     if(n==0&&value=="따라하기"){
@@ -111,10 +86,39 @@ function text_check(){
         return;
     };
 
+    //말 배우기 함수.
     function learning(){
         reply.innerText="나한테 가르쳐줄래?(응 / 싫어)";
-        question=value;
-        key=1;
+        question=value; //사용자 질문 미리 저장
+        key=1; //조건문으로 진입하는 키 값 변경
+    }
+
+    if(key==1){
+        if(value=="응"){
+            reply.innerText="대답을 알려줘!";
+            input.value=null;
+            key=2;
+        } else {
+            reply.innerText="야옹?";
+            input.value=null;
+            key=0;
+        }
+        return;
+    }
+
+    function push_json(){
+        json.push({question: `${question}`, answer: `${answer}`});
+        //json이라는 데이터에 값을 추가하는 함수
+        reply.innerText="기억했어!";
+        key = 0;
+    }
+
+    //answer값에 사용자 입력 저장
+    if(key==2){
+        answer=value;
+        push_json();
+        input.value=null;
+        return;
     }
 
     if (value=="어둡게"){
