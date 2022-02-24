@@ -33,6 +33,8 @@ typewriter
 let question ="";
 let answer="";
 
+let b = 0; // 다크모드 판단
+
 let key=0;
 
 function text_check(){
@@ -42,7 +44,6 @@ function text_check(){
 
     const bod = document.getElementById("body");
     const cat = document.getElementById("cat");
-    const ti = document.getElementById("ti");
     
     for(let i = 0; i<json.length; i++){
         if(value==json[i].question){
@@ -54,19 +55,27 @@ function text_check(){
 
     if(key==1){
         if(value=="네"){
-            reply.innerText="대답을 입력해주세요!";
+            reply.innerText="대답을 알려줘!";
+            input.value=null;
             key=2;
         } else {
             reply.innerText="야옹?";
+            input.value=null;
             key=0;
         }
         return;
+    }
+
+    function push_json(){
+        json.push({question: `${question}`, answer: `${answer}`});
+        key = 0;
     }
 
     if(key==2){
         answer=value;
         push_json();
         reply.innerText="기억했어!";
+        input.value=null;
         return;
     }
 
@@ -102,41 +111,45 @@ function text_check(){
         return;
     };
 
-    if (value=="어둡게"){
-        reply.innerText="불을 껐어!"
-        bod.style.backgroundColor = "black";
-        cat.style.filter="grayscale(100%)";
-    } else if (value=="밝게"){
-        reply.innerText="불을 켰어!"
-        bod.style.backgroundColor = "white";
-        cat.style.filter="";
-    } else {
-        if(key==0){
-            reply.innerText="모르는 말이야!"
-            setTimeout(learning,2000);
-            question=value;
-            key=1;
-        }
+    
+    function learning(){
+        reply.innerText="나한테 가르쳐줄래?(네 / 아니오)";
+        question=value;
+        key=1;
     }
 
+    if (value=="어둡게"){
+        if(b==0){
+            reply.innerText="불을 껐어!"
+            bod.style.backgroundColor = "black";
+            cat.style.filter="grayscale(100%)";
+            b++;
+            input.value=null;
+            return;
+        } else {
+            reply.innerText="이미 어두운걸?";
+            input.value=null;
+        };
+    } else if (value=="밝게"){
+        if(b==1){
+            reply.innerText="불을 켰어!"
+            bod.style.backgroundColor = "white";
+            cat.style.filter="";
+            b=0;
+            input.value=null;
+            return;
+        } else {
+            reply.innerText="지금도 밝아!";
+            input.value=null;
+        };
+    } else {
+        if(key==0){
+            reply.innerText="모르는 말이야!";
+            setTimeout(learning,2000);
+            input.value=null;
+        }
+    };
 }
-
-function learning(){
-    reply.innerText="나한테 가르쳐줄래?(네 / 아니오)"
-}
-
-function push_json(){
-	json.push({question: `${question}`, answer: `${answer}`});
-	key = 0;
-}
-
-// function push_json(){
-//     json.push({question:`${question}`,answer:`${answer}`});
-//     document.getElementById("type").innerHTML = "기억했어!";
-//     key=0;
-// }
-
-
 
 document.getElementById("btn").addEventListener("click",text_check);
 document.getElementById("form").addEventListener("submit",text_check);
