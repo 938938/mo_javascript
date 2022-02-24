@@ -35,7 +35,7 @@ let answer="";
 
 let b = 0; // 다크모드 판단
 
-let key=0;
+let key=0; // 말가르쳐주기 판단
 
 function text_check(){
     event.preventDefault();
@@ -54,7 +54,7 @@ function text_check(){
     }
 
     if(key==1){
-        if(value=="네"){
+        if(value=="응"){
             reply.innerText="대답을 알려줘!";
             input.value=null;
             key=2;
@@ -111,9 +111,8 @@ function text_check(){
         return;
     };
 
-    
     function learning(){
-        reply.innerText="나한테 가르쳐줄래?(네 / 아니오)";
+        reply.innerText="나한테 가르쳐줄래?(응 / 싫어)";
         question=value;
         key=1;
     }
