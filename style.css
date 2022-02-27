@@ -1,7 +1,20 @@
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
+*{
+  font-family: 'Dongle', sans-serif;
+}
+html, body{
+  font-family: 'Dongle', sans-serif;
+  font-size:30px;
+}
+.wrapper{
+  width:500px; height:600px; margin:30px auto;
+  border:2px solid black;
+  text-align:center;
+}
 
-
+/* 
 .wrapper{
   width:500px; height:50px; margin:20px auto;
   border:2px solid rgb(0, 10, 74);
@@ -51,4 +64,4 @@
   width:100px; height:20px;
   text-align:center; font-size:10px; line-height:10px;
   background-color:white;
-}
+} */
